@@ -36,3 +36,6 @@ form{
 .movieslist{
     margin: 2rem 0;
 }
+button{
+    padding: 0 .8rem;
+}
