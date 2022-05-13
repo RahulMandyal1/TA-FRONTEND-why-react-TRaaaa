@@ -11,8 +11,6 @@ const moviesData = [
   },
 ];
 
-createUi();
-
 // function to create elements
 function createElement(type, attr, ...args) {
   let element = document.createElement(type);
@@ -43,16 +41,20 @@ function createElement(type, attr, ...args) {
 function createUi(movies = moviesData, rootElement = movieList) {
   rootElement.innerHTML = "";
   movies.forEach((movie, index) => {
+    let button = createElement(
+      "button",
+      { id: index, className: "canclebutton" , onclick : revertWatched },
+      movie.isWatched ? "watched" : " to watch"
+    );
+
+    //  delete a movie from movielist
+    button.addEventListener("click", revertWatched);
+
     let movieContainer = createElement(
       "div",
       {
         className: "flex",
       },
-      createElement("input", {
-        type: "checkbox",
-        checked: false,
-        className: "iswatched",
-      }),
       createElement(
         "p",
         {
@@ -60,27 +62,16 @@ function createUi(movies = moviesData, rootElement = movieList) {
         },
         movie.name
       ),
-      createElement(
-        "span",
-        {
-          "data-id": index,
-          className: "canclebutton",
-        },
-        "❌"
-      )
+      button
     );
     rootElement.append(movieContainer);
   });
 }
-// change checkbox
-checkboxIsWatched.addEventListener("change", revertcheckbox);
-//  delete a movie from movielist
-cancleButton.addEventListener("click", deleteMovie);
+
 //once a user press enter movies should be updated in
 // movie list
 
 userinput.addEventListener("keyup", (event) => {
-  console.log(event.target.value);
   if (event.keyCode === 16) {
     event.preventDefault();
     moviesData.push({
@@ -91,16 +82,11 @@ userinput.addEventListener("keyup", (event) => {
   }
 });
 
-//revert checkbox
-function revertcheckbox(event) {
-  let id = event.target.id;
-  moviesData[id].isWatched = !moviesData[0].isWatched;
-}
-
 // delete a movie
 
-function deleteMovie(event) {
-  let id = event.target.dataset.id;
-  moviesData.splice(id, 1);
+function revertWatched(event) {
+  let id = event.target.id;
+  console.log(moviesData[id].isWatched);
+  moviesData[id].isWatched = !moviesData[id].isWatched;
   createUi();
 }
