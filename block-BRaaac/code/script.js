@@ -18,6 +18,12 @@ function createElement(type, attr, ...args) {
   for (key in attr) {
     if (key.startsWith("data")) {
       element.setAttribute(key, attr[key]);
+    }
+
+    // support for event
+    if (key.startsWith("on")) {
+      let eventType = key.replace("on", "").toLowerCase();
+      element.addEventListener(eventType, attr[key]);
     } else {
       element[key] = attr[key];
     }
@@ -41,15 +47,6 @@ function createElement(type, attr, ...args) {
 function createUi(movies = moviesData, rootElement = movieList) {
   rootElement.innerHTML = "";
   movies.forEach((movie, index) => {
-    let button = createElement(
-      "button",
-      { id: index, className: "canclebutton" },
-      movie.isWatched ? "watched" : " to watch"
-    );
-
-    //  delete a movie from movielist
-    button.addEventListener("click", revertWatched);
-
     let movieContainer = createElement(
       "div",
       {
@@ -62,7 +59,11 @@ function createUi(movies = moviesData, rootElement = movieList) {
         },
         movie.name
       ),
-      button
+      createElement(
+        "button",
+        { id: index, className: "canclebutton", onclick: revertWatched },
+        movie.isWatched ? "watched" : " to watch"
+      )
     );
     rootElement.append(movieContainer);
   });
