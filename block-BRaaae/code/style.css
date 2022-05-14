@@ -1,0 +1,41 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+.flex{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+body{
+    font-size: 1.6rem;
+}
+.center{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+form{
+    width: 30rem;
+    margin: 4rem 0 ;
+    padding: 3rem;
+    border: .1rem solid #dddddd;
+    border-radius: .4rem;
+}
+.userinput{
+    padding: .8rem;
+    display: inline-block;
+    width: 100%;
+}
+.movieslist{
+    margin: 2rem 0;
+}
+button{
+    padding: 0 .8rem;
+}
