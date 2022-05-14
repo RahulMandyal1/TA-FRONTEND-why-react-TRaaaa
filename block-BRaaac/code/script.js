@@ -43,7 +43,7 @@ function createUi(movies = moviesData, rootElement = movieList) {
   movies.forEach((movie, index) => {
     let button = createElement(
       "button",
-      { id: index, className: "canclebutton" , onclick : revertWatched },
+      { id: index, className: "canclebutton" },
       movie.isWatched ? "watched" : " to watch"
     );
 
@@ -70,7 +70,6 @@ function createUi(movies = moviesData, rootElement = movieList) {
 
 //once a user press enter movies should be updated in
 // movie list
-
 userinput.addEventListener("keyup", (event) => {
   if (event.keyCode === 16) {
     event.preventDefault();
@@ -82,11 +81,11 @@ userinput.addEventListener("keyup", (event) => {
   }
 });
 
+createUi();
 // delete a movie
 
 function revertWatched(event) {
   let id = event.target.id;
-  console.log(moviesData[id].isWatched);
   moviesData[id].isWatched = !moviesData[id].isWatched;
   createUi();
 }
