@@ -53,8 +53,7 @@ userinput.addEventListener("keyup", (event) => {
 });
 
 createUi();
-// delete a movie
-
+//remove a movie from  the array list
 function revertWatched(event) {
   let id = event.target.id;
   moviesData[id].isWatched = !moviesData[id].isWatched;
