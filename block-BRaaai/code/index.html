@@ -20,6 +20,8 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- Your custom script here -->
   <script type="text/babel">
+    //  all the months 
+      var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     // this is the data of this card
     let body = document.querySelector("body");
     let cardInfo = {
@@ -37,7 +39,10 @@
       <article className="card_container column">
         <figure className="image-container">
           <img src={cardInfo.imageURL} alt="desert" />
-          <p className="datecontainer"> 26 March </p>
+          <div className="datecontainer">
+            <p>{cardInfo.date.getDay()}</p>
+            <p>{mS[cardInfo.date.getMonth()]}</p>    
+         </div>
           <p className="postcategory">{cardInfo.category}</p>
         </figure>
         <div class="post-information">
