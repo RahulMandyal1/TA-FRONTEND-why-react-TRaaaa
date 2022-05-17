@@ -1,0 +1,101 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+:root{
+    --primary : #E54D38;
+}
+
+#root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 0  9% ;
+}
+header{
+    text-align: center;
+}
+h1{
+    font-size: 5rem;
+    font-weight:600;
+}
+header h2{
+    color: grey;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.card_container{
+    flex-basis: 30%;
+    box-shadow:  .5rem .5rem 1.5rem rgba(0,0,0,0.1);
+}
+.image-container{
+    position: relative;
+    width: 100%;
+}
+.image-container img{
+    width: 100%;
+}
+.postcategory{
+    position: absolute;
+    left: 0;
+    bottom:.1rem;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: #fff;
+}
+.datecontainer{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius:50%;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight:600;
+    color: #fff;
+}
+.card_container header{
+    margin: 1rem 0 ;
+}
+.post-information{
+    padding: 1rem 2rem;
+}
+header h2{
+    font-weight: 800;
+}
+header h3{
+    font-size: 2rem;
+    color: #E54D38;
+    font-weight: 400;
+}
+article .description{
+    color:grey;
+    font-size: 1.4rem;
+}
+.additional-information{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    color: grey;
+    font-weight: 600;
+}

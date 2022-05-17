@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my first card in the react js</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body></body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    //  all the months 
+      var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    // this is the data of this card
+    let body = document.querySelector("body");
+    let cardInfo = {
+      title: "City Lights in New York",
+      date: new Date("2017-01-26"),
+      comments: 67,
+      subTitle: "The city that never sleeps.",
+      description:
+        "New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.",
+      category: "photos",
+      imageURL:
+        "https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    };
+    let postcard = (
+      <article className="card_container column">
+        <figure className="image-container">
+          <img src={cardInfo.imageURL} alt="desert" />
+          <div className="datecontainer">
+            <p>{cardInfo.date.getDay()}</p>
+            <p>{mS[cardInfo.date.getMonth()]}</p>    
+         </div>
+          <p className="postcategory">{cardInfo.category}</p>
+        </figure>
+        <div class="post-information">
+          <header>
+            <h2 className="title">{cardInfo.title}</h2>
+            <h3 className="subtitle">{cardInfo.subTitle}</h3>
+          </header>
+          <p className="description">{cardInfo.description}</p>
+          <div className="additional-information">
+            <span>6 minutes ago</span>
+            <span>{cardInfo.comments}</span>
+          </div>
+        </div>
+      </article>
+    );
+    ReactDOM.render(postcard, body);
+  </script>
+</html>
