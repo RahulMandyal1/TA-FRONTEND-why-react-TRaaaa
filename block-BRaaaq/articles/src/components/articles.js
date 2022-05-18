@@ -1,5 +1,5 @@
 import data from "../data";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 function Articles() {
   return (
@@ -26,9 +26,9 @@ function Article(props) {
 }
 // to get  a useful error we  are checking types of props
 Article.propTypes = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  urlToImage: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  url: PropTypes.string,
+  description: PropTypes.string,
+  urlToImage: PropTypes.string,
 };
 export default Articles;
