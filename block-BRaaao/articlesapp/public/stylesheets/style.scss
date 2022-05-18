@@ -61,9 +61,12 @@ section, footer{
     align-items: flex-start;
     .flex-30{
         flex : 0 1 30%;
+
+
     }
     figure{
-        width: 60%;
+        width: 100%;
+        object-fit: cover;
         img {
             width: 100%;
             height: 100%
