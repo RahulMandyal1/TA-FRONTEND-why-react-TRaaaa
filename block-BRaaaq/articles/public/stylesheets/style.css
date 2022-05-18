@@ -72,18 +72,37 @@ footer {
 }
 .flex-30{
     flex: 0 1 30%;
+    padding: 2rem;
+    border: .1rem solid #dddddd;
+    margin: 1rem 0;
 }
 .flex-30 figure{
     height: 40%;
     width: 100%;
 }
 .flex-30 figure img{
-    width:200px;
-    height: 100%;
+    width:100%;
+    height: 20rem;
     object-fit: cover;
 }
 
+.flex-30 h2{
+    font-size: 1.6rem;
+}
+.flex-30 p{
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
 
+.flex-30 a{
+    background-color: #333;
+    padding: .8rem;
+    border-radius:.2rem ;
+    color: #fff;
+    font-weight: 500;
+    display: inline-block;
+    margin:  1rem 0;
+}
 footer {
   font-size: 1.6rem;
   background-color: #333;

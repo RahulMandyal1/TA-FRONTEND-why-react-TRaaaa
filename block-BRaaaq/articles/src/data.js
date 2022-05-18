@@ -1,4 +1,4 @@
-const data = [
+ const data = [
     {
       author: 'Omkar Godbole',
       title:
