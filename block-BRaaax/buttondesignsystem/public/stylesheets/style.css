@@ -1,0 +1,18 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Popppins',sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+.flex{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+button[size="medium"]{
+    padding: 40px;
+}
