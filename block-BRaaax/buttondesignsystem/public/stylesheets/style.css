@@ -2,17 +2,56 @@
     margin:0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Popppins',sans-serif;
+    font-family: 'Poppins',sans-serif;
 }
 html{
-    font-size: 62.5%;
+    font-size: 16px;
 }
 .flex{
     display: flex;
     justify-content:space-between;
     align-items: center;
 }
+#root{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    min-height: 100vh;
+    padding: 5rem 0;
+    align-items: center;
+}
 
-button[size="medium"]{
-    padding: 40px;
+.button{
+    display: inline-block;
+    border: .1rem solid blue;
+    margin: 2rem  0;
+    letter-spacing: .3rem;
+    font-size: 16px;
+}
+
+/* // Button types */
+.button-primary{
+    background-color: #080086;
+    color: #fff;
+    font-weight: 600;
+}
+.button-secondary{
+    background-color: transparent;
+    border: .2rem solid #080086;
+}
+
+.button-tertiary{
+    background-color: transparent;
+    border: none;
+}
+
+/* different sizes buttons  */
+.button-normal{
+padding: .8rem 2.4rem;
+}
+.button-medium{
+    padding: 1rem 3.2rem;
+}
+.button-large{
+    padding: 1.6rem 4.2rem;
 }
